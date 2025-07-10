@@ -1,0 +1,14 @@
+langchain
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+seaborn
+nltk
+spacy
+transformers
+torch
+tensorflow
+flask
+fastapi
