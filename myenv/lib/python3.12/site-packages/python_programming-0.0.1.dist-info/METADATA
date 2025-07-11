@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: Python-Programming
+Version: 0.0.1
+Author: Atharva Gokhale
+Author-email: atharvagokhale95@gmail.com
+Requires-Dist: langchain
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
