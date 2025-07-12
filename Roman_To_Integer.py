@@ -13,7 +13,7 @@ class Solution:
         total = 0
         for char in reversed(s):
             val = self.dict[char]
-            if val > prev:
+            if val >= prev:
                total += val
                
             else:               # val is less than prev
