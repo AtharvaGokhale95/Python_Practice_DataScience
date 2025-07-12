@@ -16,9 +16,9 @@ class Solution:
             if val > prev:
                total += val
                
-            else:
+            else:               # val is less than prev
                total -= val
-            prev = val
+            prev = val          # prev is updated only after if - else is completed
         return total
 
 obj = Solution()

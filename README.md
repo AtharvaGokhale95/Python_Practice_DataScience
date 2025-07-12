@@ -17,3 +17,8 @@ Following are the key take-away from the solutions:
 3. isPalindrome:
     1. Using string/ list reversal: list = list[::-1]
     2. Using while loop: while head < tail, head = 0 and tail = len(str) - 1
+
+4. Roman to Integer:
+    1. When we want to keep a track of the current_value, previous_value and total_value, initialize previous_value and total_value == 0
+    2. Update the previous_value with the value already looped on: previous_value = current_value
+    3. Update the total_value based on the logic 
