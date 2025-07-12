@@ -13,3 +13,7 @@ Following are the key take-away from the solutions:
 2. Ways to call the function defined inside a class:
     1. Create a instance of a class and then call the method: object.method(parameters)
     2. Directly using the Class name: Class.method(object, parameters)
+
+3. isPalindrome:
+    1. Using string/ list reversal: list = list[::-1]
+    2. Using while loop: while head < tail, head = 0 and tail = len(str) - 1

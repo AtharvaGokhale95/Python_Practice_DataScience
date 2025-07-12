@@ -12,6 +12,13 @@ class Solution:
             return True
         return False
     
+    def isPalindrome_reverse_str(self, x:int) -> bool:
+        x_str = str(x)
+        x_str_reverse = x_str[::-1]
+        if x_str == x_str_reverse:
+            return True
+        return False
+    
     # Using while loop:
     def isPalindrome_while(self, x):
         x_str = str(x)                              # Type casted int to str
@@ -32,7 +39,8 @@ class Solution:
             
     
 obj = Solution()
-print(obj.isPalindrome_while(1212))
+print(obj.isPalindrome_reverse_str(121))
+# print(obj.isPalindrome_while(1212))
 # print(obj.isPalindrome(121))
         
 
