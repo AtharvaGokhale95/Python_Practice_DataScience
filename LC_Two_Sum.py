@@ -19,7 +19,8 @@ class Solution:
 # # Time complexity: O(n^2)
 
 
-# Using dictionary
+# Using dictionary: Time complexity: O(n)
+
     def twoSum(self, nums:list[int], target:int) -> list[int]:
         num_dict = {}                                               # This dict will be empty for the first iteration
         for i, num in enumerate(nums):                              # This for loop runs over each key-value pair using the enumerate
@@ -31,8 +32,12 @@ class Solution:
         return []
 
     
-sol = Solution()
-print(sol.twoSum([2, 7, 11, 15], 17))
+sol = Solution()                                                    # Created a object of the class Solution
+print(sol.twoSum([2, 7, 11, 15], 17))                               # Called method twoSum using the instance of the Class
+
+
+
+# When we call a method using object.method(), the self parameter is assigned to object
 
 
         
