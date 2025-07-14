@@ -31,6 +31,7 @@ class Solution:
                 prefix = prefix[:-1]        # prefix[:-1] - Complete string but the last element
                 if not prefix:
                     return ""               # If there is no common prefix, return blank - This will happen when the prefix string is shrinked all the way to empty string
+        return prefix
 # 1. Prefix = 'flower', Start with strs[1] = flow, flow does not start with prefix, prefix = 'flowe' -> still flow does not start with prefix, prefix = 'flow' -> now flow starts with flow
 # 2. Prefix = 'flow' , move to strs[2] = flight, flight does not start with prefix, prefix = 'flo' -> still flight does not start with prefix, prefix = 'fl' -> now flight starts with fl
 # Jump out of while as while not condition is not satisfied anymore for word = strs[2], with prefix = 'fl'
