@@ -1,6 +1,6 @@
 from typing import List
 
-# Time Complexity: O(n^2)
+# Time Complexity: O(n) - As the first for loop is only iterating on the first word and we are using the same idx to iterate on each char of all the remaining words
 class Solution:
     def longestcommonprefix(self, strs:List[str]) -> str:
 
