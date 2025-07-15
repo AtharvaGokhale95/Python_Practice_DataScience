@@ -22,10 +22,12 @@ class Solution:
                 nums[write_idx] = nums[read_idx]            # We will add the value at the current_idx to the nums array - This is how we update the array in place
                 write_idx += 1                              # We add 1 to the count of unique elements in the nums array
                 print(nums)
+                # After the last iteration, we will still see the last duplicate present in nums as, when read_idx reached to (len(nums) - 1)th idx, and the if the control doesn't enter the if loop, it returns the read_idx and leave the last duplicate in the nums arr as is
         return write_idx
 
 s = Solution()
-print(s.remove_duplicates_inplace([1, 2, 2]))
+print(s.remove_duplicates([1, 2, 2]))
+print(s.remove_duplicates_inplace([1,2,3,4,4,5,6,7,7]))
       
 
 
