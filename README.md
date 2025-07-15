@@ -49,8 +49,10 @@ Following are the key take-away from the solutions:
 
 4. Longest Common Prefix:
     1. Sometimes we need to check for the complement condition instead of the actual condition in order to make the logic work:
+        ```python
         a. if word[idx] == current_char:
                     prefix = prefix + current_char              # In this case we check if the new char is matching with current char in first word. But the problem is we are only able to check for the current word in strs list. We cannot check this condition for all the pending words before adding the char to prefix list
         b. if idx >= len(word) or word[idx] !=  current_char:
                     return prefix                               # By using this logic we take care of the idx going out of range
-                                                                # And, if the word[idx] != current_char we can stop iterating there. This enables us to stop at the right place                       
+                                                                # And, if the word[idx] != current_char we can stop iterating there. This enables us to stop at the right place 
+        ```
