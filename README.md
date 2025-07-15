@@ -8,6 +8,10 @@ Key points from the DSA perspectives:
     1. Create a instance of a class and then call the method: object.method(parameters)
     2. Directly using the Class name: Class.method(object, parameters)
 
+2. Parameter - Variable in the function definition , Arguement - The actual value passed to the function
+
+
+
 
 Following are the key take-away from the solutions:
 
