@@ -5,12 +5,11 @@ Video to create a venv: https://www.youtube.com/watch?v=bf7pCxj6mEg&t=254s&ab_ch
 
 Key points from the DSA perspectives:
 1. Ways to call the function defined inside a class:
-    1. Create a instance of a class and then call the method: object.method(parameters)
-    2. Directly using the Class name: Class.method(object, parameters)
+    1. Instance Method - Need to create a instance of a class and then call the method: object.method(parameters) - First arguement is self
+    2. Class Method - Directly using the Class name: Class.method(object, parameters) - We can call a class method insider another class method
+    3. Static Method - First arguement is the class itself - This method cannot refer to the object - Cannot access instance variable from class method
 
 2. Parameter - Variable in the function definition , Arguement - The actual value passed to the function
-
-
 
 
 Following are the key take-away from the solutions:
