@@ -28,6 +28,45 @@ Key points from the DSA perspectives:
     machine.make_coffee()  # Output: Making Espresso with 1 teaspoon sugar
     ```
 
+3. Types of Inheritances:
+    1. Single Inheritance
+    ```python
+        class Parent:
+            pass
+        class Child(Parent):
+            pass
+    ```
+
+    2. Multiple Inheritance
+    ```python
+        class A:
+            pass
+        class B:
+            pass
+        class C(A, B):  # Inherits from both A and B
+            pass
+    ```
+    
+    3. Multilevel Inheritance
+    ```python
+        class A:
+            pass
+    class B(A):
+        pass
+    class C(B):
+        pass
+    ```
+
+    4. Hierarchical Inheritance
+    ```python
+    class Parent:
+        pass
+    class Child1(Parent):
+        pass
+    class Child2(Parent):
+        pass
+    ```
+
 
 Following are the key take-away from the solutions:
 

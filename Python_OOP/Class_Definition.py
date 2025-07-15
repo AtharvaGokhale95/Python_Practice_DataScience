@@ -4,7 +4,7 @@
 class Person:
     class_var = "Gokhale"           # Class variable
     
-    def __init__(self, name):
+    def __init__(self, name):               # This method is called Constructor
         # self is the class itself - self refers to to current instance of the class
         # self gives access to instance variables and other methods defined in the class 
         # self is used to define properties of the class
