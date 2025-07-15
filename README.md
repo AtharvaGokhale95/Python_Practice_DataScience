@@ -9,7 +9,23 @@ Key points from the DSA perspectives:
     2. Class Method - Directly using the Class name: Class.method(object, parameters) - We can call a class method insider another class method
     3. Static Method - First arguement is the class itself - This method cannot refer to the object - Cannot access instance variable from class method
 
-2. Parameter - Variable in the function definition , Arguement - The actual value passed to the function
+2. Definitions:
+    1. Parameter - Variable in the function definition
+    2. Arguement - The actual value passed to the function
+    3. Attributes - Variables belonging to an object or class (Object Property) - Variable tied to a specific object 
+    E.g.:
+    *********
+    class CoffeeMachine:
+    def __init__(self, coffee_type, sugar_level):  # parameters
+        self.coffee_type = coffee_type             # attributes
+        self.sugar_level = sugar_level
+
+    def make_coffee(self):
+        print(f"Making {self.coffee_type} with {self.sugar_level} sugar")
+
+    # Calling the class with arguments
+    machine = CoffeeMachine("Espresso", "1 teaspoon")  # arguments
+    machine.make_coffee()  # Output: Making Espresso with 1 teaspoon sugar
 
 
 Following are the key take-away from the solutions:
