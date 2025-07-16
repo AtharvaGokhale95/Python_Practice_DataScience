@@ -137,6 +137,12 @@ Key points from the DSA perspectives:
         raise MyCustomError("Something went wrong!")
         ```
 
+    5. Ways to Implement Exceptions:
+        1. Built In Exceptions/ User Defined Exceptions:
+            a. Single Except
+            b. Multiple Except
+        2. Using else and finally
+        3. Raising Exceptions manually
   
 
 Following are the key take-away from the solutions:
