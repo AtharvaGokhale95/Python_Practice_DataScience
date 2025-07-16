@@ -70,28 +70,69 @@ Key points from the DSA perspectives:
 4. Exception Handling in Python:
 
     1. Hierarchy of built-in exceptions:  
-            BaseException
+                BaseException
         ├── SystemExit
         ├── KeyboardInterrupt
         ├── GeneratorExit
         └── Exception
             ├── ArithmeticError
-            │    ├── ZeroDivisionError
-            │    └── OverflowError
-            ├── LookupError
-            │    ├── IndexError
-            │    └── KeyError
+            │   ├── FloatingPointError
+            │   ├── OverflowError
+            │   └── ZeroDivisionError
             ├── AssertionError
             ├── AttributeError
+            ├── BufferError
             ├── EOFError
             ├── ImportError
-            │    └── ModuleNotFoundError
+            │   └── ModuleNotFoundError
+            ├── LookupError
+            │   ├── IndexError
+            │   └── KeyError
+            ├── MemoryError
             ├── NameError
+            │   └── UnboundLocalError
             ├── OSError
-            │    ├── FileNotFoundError
-            │    └── PermissionError
+            │   ├── BlockingIOError
+            │   ├── ChildProcessError
+            │   ├── ConnectionError
+            │   │   ├── BrokenPipeError
+            │   │   ├── ConnectionAbortedError
+            │   │   ├── ConnectionRefusedError
+            │   │   └── ConnectionResetError
+            │   ├── FileExistsError
+            │   ├── FileNotFoundError
+            │   ├── InterruptedError
+            │   ├── IsADirectoryError
+            │   ├── NotADirectoryError
+            │   ├── PermissionError
+            │   ├── ProcessLookupError
+            │   └── TimeoutError
+            ├── ReferenceError
             ├── RuntimeError
-            └── TypeError
+            │   ├── NotImplementedError
+            │   └── RecursionError
+            ├── StopAsyncIteration
+            ├── StopIteration
+            ├── SyntaxError
+            │   └── IndentationError
+            │       └── TabError
+            ├── SystemError
+            ├── TypeError
+            ├── ValueError
+            │   └── UnicodeError
+            │       ├── UnicodeDecodeError
+            │       ├── UnicodeEncodeError
+            │       └── UnicodeTranslateError
+            └── Warning
+                ├── DeprecationWarning
+                ├── PendingDeprecationWarning
+                ├── RuntimeWarning
+                ├── SyntaxWarning
+                ├── UserWarning
+                ├── FutureWarning
+                ├── ImportWarning
+                ├── UnicodeWarning
+                └── ResourceWarning
     
     2. User defined exception:
         ```python
