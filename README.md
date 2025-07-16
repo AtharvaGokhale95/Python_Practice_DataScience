@@ -70,87 +70,52 @@ Key points from the DSA perspectives:
 4. Exception Handling in Python:
 
     1. Hierarchy of built-in exceptions:  
-                BaseException
+        BaseException
         ├── SystemExit
         ├── KeyboardInterrupt
         ├── GeneratorExit
         └── Exception
             ├── ArithmeticError
-            │   ├── FloatingPointError
-            │   ├── OverflowError
-            │   └── ZeroDivisionError
+            ├── BufferError
+            ├── LookupError
             ├── AssertionError
             ├── AttributeError
-            ├── BufferError
             ├── EOFError
+            ├── FloatingPointError
+            ├── GeneratorExit
             ├── ImportError
-            │   └── ModuleNotFoundError
-            ├── LookupError
-            │   ├── IndexError
-            │   └── KeyError
+            ├── ModuleNotFoundError
+            ├── IndexError
+            ├── KeyError
+            ├── KeyboardInterrupt
             ├── MemoryError
             ├── NameError
-            │   └── UnboundLocalError
+            ├── NotImplementedError
             ├── OSError
-            │   ├── BlockingIOError
-            │   ├── ChildProcessError
-            │   ├── ConnectionError
-            │   │   ├── BrokenPipeError
-            │   │   ├── ConnectionAbortedError
-            │   │   ├── ConnectionRefusedError
-            │   │   └── ConnectionResetError
-            │   ├── FileExistsError
-            │   ├── FileNotFoundError
-            │   ├── InterruptedError
-            │   ├── IsADirectoryError
-            │   ├── NotADirectoryError
-            │   ├── PermissionError
-            │   ├── ProcessLookupError
-            │   └── TimeoutError
+            ├── OverflowError
+            ├── RecursionError
             ├── ReferenceError
             ├── RuntimeError
-            │   ├── NotImplementedError
-            │   └── RecursionError
-            ├── StopAsyncIteration
             ├── StopIteration
+            ├── StopAsyncIteration
             ├── SyntaxError
-            │   └── IndentationError
-            │       └── TabError
+            ├── IndentationError
+            ├── TabError
             ├── SystemError
             ├── TypeError
+            ├── UnboundLocalError
+            ├── UnicodeError
             ├── ValueError
-            │   └── UnicodeError
-            │       ├── UnicodeDecodeError
-            │       ├── UnicodeEncodeError
-            │       └── UnicodeTranslateError
-            └── Warning
-                ├── DeprecationWarning
-                ├── PendingDeprecationWarning
-                ├── RuntimeWarning
-                ├── SyntaxWarning
-                ├── UserWarning
-                ├── FutureWarning
-                ├── ImportWarning
-                ├── UnicodeWarning
-                └── ResourceWarning
-    
-    2. User defined exception:
-        ```python
-        class MyCustomError(Exception):
-            def __init__(self, message):
-                super().__init__(message)
+            └── ZeroDivisionError
 
-        raise MyCustomError("Something went wrong!")
-        ```
-
-    3. Definition of Exception class:
+    2. Definition of Exception class:
         ```python
         class Exception(BaseException):
             def __init__(self, *args):
                 super().__init__(*args)
         ```
     
-    4. Definition of BaseException class:
+    3. Definition of BaseException class:
         ```python
         class BaseException:
             def __init__(self, *args):
@@ -161,6 +126,18 @@ Key points from the DSA perspectives:
                     return str(self.args[0])
                 return str(self.args)
         ```
+         
+    
+    4. User defined exception:
+        ```python
+        class MyCustomError(Exception):
+            def __init__(self, message):
+                super().__init__(message)
+
+        raise MyCustomError("Something went wrong!")
+        ```
+
+  
 
 Following are the key take-away from the solutions:
 
