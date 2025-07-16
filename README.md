@@ -93,5 +93,10 @@ Following are the key take-away from the solutions:
                     prefix = prefix + current_char              # In this case we check if the new char is matching with current char in first word. But the problem is we are only able to check for the current word in strs list. We cannot check this condition for all the pending words before adding the char to prefix list
         b. if idx >= len(word) or word[idx] !=  current_char:
                     return prefix                               # By using this logic we take care of the idx going out of range
-                                                                # And, if the word[idx] != current_char we can stop iterating there. This enables us to stop at the right place 
-        ```
+                                                                # And, if the word[idx] != current_char we can stop iterating there. This enables us to stop at the right place
+5. Removed Duplicates:
+    1. In-place: This means we update the original array by removing the duplicates from ith idx by replacing that idx with the next unique value
+    2. For sorted array: We can maintain 2 indices, one to note the no of unique elements and other to read across the list
+    3. For non-sorted array: We can initialize a set, and check every time if the value exits in the set, if not then update the value at that idx
+    
+        
