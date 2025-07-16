@@ -67,6 +67,59 @@ Key points from the DSA perspectives:
         pass
     ```
 
+4. Exception Handling in Python:
+
+    1. Hierarchy of built-in exceptions:  
+            BaseException
+        ├── SystemExit
+        ├── KeyboardInterrupt
+        ├── GeneratorExit
+        └── Exception
+            ├── ArithmeticError
+            │    ├── ZeroDivisionError
+            │    └── OverflowError
+            ├── LookupError
+            │    ├── IndexError
+            │    └── KeyError
+            ├── AssertionError
+            ├── AttributeError
+            ├── EOFError
+            ├── ImportError
+            │    └── ModuleNotFoundError
+            ├── NameError
+            ├── OSError
+            │    ├── FileNotFoundError
+            │    └── PermissionError
+            ├── RuntimeError
+            └── TypeError
+    
+    2. User defined exception:
+        ```python
+        class MyCustomError(Exception):
+            def __init__(self, message):
+                super().__init__(message)
+
+        raise MyCustomError("Something went wrong!")
+        ```
+
+    3. Definition of Exception class:
+        ```python
+        class Exception(BaseException):
+            def __init__(self, *args):
+                super().__init__(*args)
+        ```
+    
+    4. Definition of BaseException class:
+        ```python
+        class BaseException:
+            def __init__(self, *args):
+                self.args = args
+
+            def __str__(self):
+                if len(self.args) == 1:
+                    return str(self.args[0])
+                return str(self.args)
+    ```
 
 Following are the key take-away from the solutions:
 
