@@ -22,16 +22,29 @@ class Solution:
                 nums[write_idx] = nums[read_idx]            # We will add the value at the current_idx to the nums array - This is how we update the array in place
                 write_idx += 1                              # We add 1 to the count of unique elements in the nums array
                 print(nums)
+                # The first k elements in the list k are unique
                 # After the last iteration, we will still see the last duplicate present in nums as, when read_idx reached to (len(nums) - 1)th idx, and the if the control doesn't enter the if loop, it returns the read_idx and leave the last duplicate in the nums arr as is
+                print(list(set(nums)))                      # List without any duplicates
         return write_idx
+    
+    # In place update of non-sorted array:
+    def remove_duplicates_inplace_nonsorted(self, nums:List[int]) -> int:
+        if not nums:
+            return 0
+        
+        seen = set()                                        # Declared a empty set
+        write_idx = 0                                       # Initialize the count of unique elements to 0
+        for num in nums:
+            if num not in seen:
+                seen.add(num)
+                nums[write_idx] = num                       # Inplace update
+                write_idx += 1
+        return write_idx, nums[:write_idx]                  # Values in nums upto (write_idx)th index are already updated in place with the unique values 
 
 s = Solution()
-print(s.remove_duplicates([1, 2, 2]))
-print(s.remove_duplicates_inplace([1,2,3,4,4,5,6,7,7]))
-      
-
-
-
+# print(s.remove_duplicates([1, 2, 2]))
+# print(s.remove_duplicates_inplace([1,2,3,4,4,5,6,7,7]))
+print(s.remove_duplicates_inplace_nonsorted([1,2,3,4,4,55,5,6,7,7]))      
 
 
         
