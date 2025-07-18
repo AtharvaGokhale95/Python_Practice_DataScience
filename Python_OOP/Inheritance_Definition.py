@@ -14,6 +14,7 @@ c.greet()                           # Calling the method from Parent class using
 
 # ?? How this works exactly??
 
+# SUPER():
 # If both parent and child define __init__(), the child's __init__ overrides the parent’s unless explicitly called using super()
 # super() is used to access methods or constructors from the parent class
 
@@ -26,7 +27,10 @@ class Animal:                           # Parent Class
         
 class Dog(Animal):                      # Child Class
     def __init__(self, name, breed):    # Constructor of Child Class
-        super().__init__(name)          # Call parent constructor
+        super().__init__(name)          # Call parent constructor - Instead of declaring self.name, we called Parent constructor 
+        #self.name (from the Animal class) is set up correctly.
+        #You don't have to duplicate the logic of the parent class
+        # super() is used to access parent method 
         self.breed = breed
     
     def speaks(self):
@@ -34,3 +38,5 @@ class Dog(Animal):                      # Child Class
 
 d = Dog("Gracy", "Labrador")
 d.speaks()
+
+
