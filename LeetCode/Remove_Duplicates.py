@@ -17,6 +17,7 @@ class Solution:
             return 0
         
         write_idx = 1                                       # There will be at least 1 unique element in every array which is not empty. Thus initialize write_idx = 1
+        # Also, this helps to use the write_idx to the update the next unique element in the array
         for read_idx in range(1, len(nums)):                # We iterate from the 2nd element in nums array as we have already considered that the 1st element is unique
             if nums[read_idx] != nums[read_idx - 1]:        # Compare current value with the previous value
                 nums[write_idx] = nums[read_idx]            # We will add the value at the current_idx to the nums array - This is how we update the array in place
