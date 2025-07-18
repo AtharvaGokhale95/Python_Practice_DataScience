@@ -175,5 +175,11 @@ Following are the key take-away from the solutions:
     1. In-place: This means we update the original array by removing the duplicates from ith idx by replacing that idx with the next unique value
     2. For sorted array: We can maintain 2 indices, one to note the no of unique elements and other to read across the list
     3. For non-sorted array: We can initialize a set, and check every time if the value exits in the set, if not then update the value at that idx
+
+6. Inplace update in an array:
+    1. Updating a value inplace with a certain condition, means we re-write the whole array idx by idx
+    2. So while updating we use a write_idx which will be updated based on the logic
+    3. We the Inplace update can be done in a sequence, then we can use a write_idx and a read_idx where the read_idx will be iterated and the arr[write_idx] value will be updated
+    4. If the inplace updated is not sequential, we need a separate data structure to implement the logic where we can store the idx visited to check every time
     
         
