@@ -181,5 +181,14 @@ Following are the key take-away from the solutions:
     2. So while updating we use a write_idx which will be updated based on the logic
     3. We the Inplace update can be done in a sequence, then we can use a write_idx and a read_idx where the read_idx will be iterated and the arr[write_idx] value will be updated
     4. If the inplace updated is not sequential, we need a separate data structure to implement the logic where we can store the idx visited to check every time
+
+7. Occurence of a substring inside a string:
+    1. How to validate continuous characters inside for loop: 
+    ```python
+    for i in range(0, len(haystack) - len(needle) + 1):
+            if haystack[i : i + len(needle)] == needle:   # This is the key logic: i : i + len(substring) - This validates continuous chars from the given idx
+                return i
+        return -1
+    ```
     
         
