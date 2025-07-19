@@ -185,10 +185,12 @@ Following are the key take-away from the solutions:
 7. Occurence of a substring inside a string:
     1. How to validate continuous characters inside for loop: 
     ```python
-    for i in range(0, len(haystack) - len(needle) + 1):
-            if haystack[i : i + len(needle)] == needle:   # This is the key logic: i : i + len(substring) - This validates continuous chars from the given idx
+    for i in range(0, len(haystack) - len(needle) + 1):     # Determining the range: Traverse only up to (len(haystack) - len(needle) + 1) as beyond this the complete substring cannot exist
+            if haystack[i : i + len(needle)] == needle:     # This is the key logic: i : i + len(substring) - This validates continuous chars from the given idx
                 return i
         return -1
     ```
+
+8. 
     
         
