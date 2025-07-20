@@ -1,5 +1,6 @@
 # Python_Programming
 This is Github Repository for all the LeetCode Practice problems and the foundational logics of the basic Data Structures and Algorithms required for a Data Scientist role
+List of LeetCode problem (660): https://leetcode.com/problem-list/n3az654g/
 
 Video to create a venv: https://www.youtube.com/watch?v=bf7pCxj6mEg&t=254s&ab_channel=KrishNaik
 
