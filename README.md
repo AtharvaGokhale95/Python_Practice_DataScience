@@ -200,5 +200,6 @@ Following are the key take-away from the solutions:
     4. If target > arr[mid]:
         a. Search Right half of the array
         b. Update left = mid + 1
+    5. Apart from updating the left and right ptr to point at the right half of the array under consideration, the value of left and right also help to exit the while loop when right < left. At this point, the updated value of left idx is returned
     
         
