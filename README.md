@@ -191,6 +191,14 @@ Following are the key take-away from the solutions:
         return -1
     ```
 
-8. 
+8. Binary Search Algorithm: Works only for sorted lists (ASC or DESC), if not sorted, sort it using list.sort()
+    1. Step: Find the mid index: (0 + len(arr) - 1) // 2
+    2. If target == arr[mid]: return (mid)th idx
+    3. If target < arr[mid]:
+        a. Search the Left half of the array
+        b. Update: right = mid -1
+    4. If target > arr[mid]:
+        a. Search Right half of the array
+        b. Update left = mid + 1
     
         
