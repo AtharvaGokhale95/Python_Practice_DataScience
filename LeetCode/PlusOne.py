@@ -21,12 +21,13 @@ class Solution:
             if digits[i] < 9:
                 digits[i] += 1
                 return digits
-            digits[i] = 0
+            else:
+                digits[i] = 0
             # With the for loop running over it complete range in the reversed direction, the carry forward +1 will be added automatically
             
             # If command comes out of the for loop, i.e, the function never returns the list digits, then:
         return [1] + digits         # This add the carried over 1 if we encounter all 9s in the digits list
-            
+        # This return statement is required if the return statement in the for loop is never executed as all the digits in the list are 9
         
         
         
