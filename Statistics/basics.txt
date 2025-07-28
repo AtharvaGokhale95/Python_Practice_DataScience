@@ -1,0 +1,15 @@
+
+1. ML Algorithms:
+    1. Making Prediction for a continuous value
+    2. Classification
+
+2. Types of data used in ML models:
+    1. Training data - I/P features and the O/P label - This data is used to train the model
+    2. Testing data - I/P features and the O/P label - This data is used to test the performance of the model
+    3. Prediction data - Finally when the ML models best fits the testing data, we make the predictions for the Prediction data
+
+2. We use Training data to evaluate the ML model and not the training data. Thus, how well the ML models fits the Training data is not the right measure
+
+3. Fitting the Training data well, but making poor predictions, is called Bias-Variance Tradeoff 
+    1. Bias: It means the liner model is more biased on a particular parameter. E.g: model that assumes price is only based on area (ignores location, age, etc)
+    
