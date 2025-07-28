@@ -8,3 +8,4 @@ class Solution:
 
 s = Solution()
 print(s.convertBinaryToDecimal("1010"))
+

@@ -1,0 +1,13 @@
+prefix=/Users/atharva/Documents/GitHub/Python_Pratice_DataScience/py_venv
+exec_prefix=/Users/atharva/Documents/GitHub/Python_Pratice_DataScience/py_venv
+libdir=/Users/atharva/Documents/GitHub/Python_Pratice_DataScience/py_venv/lib
+sharedlibdir=/Users/atharva/Documents/GitHub/Python_Pratice_DataScience/py_venv/lib
+includedir=/Users/atharva/Documents/GitHub/Python_Pratice_DataScience/py_venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
