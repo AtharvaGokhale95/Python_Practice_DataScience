@@ -36,3 +36,4 @@ Cross Validation: Cross-validation is a resampling technique used to evaluate th
 4. CV can be used for the following 2 use cases:
     1. Fine Tune the model to determine the most accurate f^(x)
     2. Determine which ML model suits best for the given data sets
+    3. Determining the value of Tuning parameter
