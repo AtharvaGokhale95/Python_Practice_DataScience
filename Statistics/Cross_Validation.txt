@@ -1,0 +1,38 @@
+Cross Validation: Cross-validation is a resampling technique used to evaluate the performance of a machine learning model on unseen data
+
+1. Why do we need it?
+    Because using only a single train-test split might:
+        1. Not represent the true performance of the model
+        2. Lead to overfitting or underfitting detection issues
+
+2. How Cross Validation works: It splits the data into multiple parts (folds), trains the model on some of them, and validates it on the remaining part — repeatedly
+
+3. Types of Cross - Validation:
+    1. Holdout Validation
+        a. Simple split: train/test (e.g., 80% train, 20% test)
+        b. Quick but unreliable for small datasets
+    2. K-Fold Cross-Validation
+        a. Data is split into K equal parts (folds)
+        b. Each fold is used once as validation, rest as training
+        c. Average performance across all K iterations
+        d. Normally use k = 5 or 10
+    3. Stratified K-Fold CV (Classification Problems)
+        a. Ensures each fold has proportional class distribution (useful for classification)
+        b. Specially for Classification problem, using normal K-Fold CV can result in poor model evaluation due to - Uneven class distribution in some folds
+        c. Stratified K-Fold ensures that each fold has approximately the same percentage of samples of each class as the full dataset
+    4. Time Series Cross-Validation:
+        a. Special type of CV used when your data is time-dependent, meaning the order of the data matters (e.g., stock prices, weather data, sales forecasts)
+        b. In regular cross-validation (like K-Fold), data is randomly split, which breaks the temporal order. But in time series:
+            1. Future should never be used to predict the past
+            2. Data has autocorrelation (past affects future)
+            3. Model needs to respect the chronological order
+        c. No Shuffling
+            1. Time series data must not be shuffled
+            2. Train and test sets must respect time order
+        d. Rolling Forecast Origin (Expanding Window) - Train on a growing window, then predict the next time point(s)
+        e. Sliding Window (Fixed Window) - You keep the training window the same size but slide it forward
+        f. Multiple Test Sets (e.g., Walk-Forward Validation) - Train on past data, test on the next block
+
+4. CV can be used for the following 2 use cases:
+    1. Fine Tune the model to determine the most accurate f^(x)
+    2. Determine which ML model suits best for the given data sets
