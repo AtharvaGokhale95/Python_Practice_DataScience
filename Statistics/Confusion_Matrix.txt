@@ -1,0 +1,38 @@
+1. Confusion Matrix used in the following Scenario:
+    a. Say we solving a Classification problem, we used the following ML models:
+        1. Logistic Regression
+        2. Decision Tree
+        3. KNN
+    b. We train the above 3 models using the training data
+    c. Now, we test each method using the testing data
+    d. Now to summarize how each method performed on the testing data we use the Confusion Matrix 
+
+2. Confusion Matrix:
+    a. We create a Confusion Matrix for each method for the testing data
+    b. Rows: What the model predicted
+    c. Columns: Known Truth 
+    d. Sample Confusion Matrix:
+                                    Actual Positives            Actual Negatives
+        Predicted Positives          True Positive (TP)           False Positives (FP)
+        Predicted Negative           False Negatives (FN)         True Negatives (TN)
+
+3. Metrics derived from Confusion Matrix:
+
+    a. Accuracy = TP + TN / TP + FP + TN + FN
+
+    b. Precision = TP / TP + FP 
+
+    c. Recall (sensitivity) = TP/ TP + FN 
+
+    d. F1 Score = 2 * (Precision * Recall)/ Precision + Recall
+
+4. Intuition of above metrics:
+    a. Accuracy: 
+        1. Accuracy is the proportion of total predictions that the model got correct
+        2. Accuracy can be misleading if the data is imbalanced
+    b. Precision
+        1. Precision is a metric used to evaluate the quality of ONLY positive predictions made by a classification model
+        2. High precision: Very few false positives
+        3. High precision is important when: False positives are costly
+    c. Recall
+        1. Out of all actual positives, how many did the model correctly identify?
