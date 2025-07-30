@@ -7,12 +7,12 @@
     c. Now, we test each method using the testing data
     d. Now to summarize how each method performed on the testing data we use the Confusion Matrix 
 
-2. Confusion Matrix:
+2. Confusion Matrix: Size is determined by the no of Output labels
     a. We create a Confusion Matrix for each method for the testing data
     b. Rows: What the model predicted
     c. Columns: Known Truth 
     d. Sample Confusion Matrix:
-                                    Actual Positives            Actual Negatives
+                                        Actual Positives            Actual Negatives
         Predicted Positives          True Positive (TP)           False Positives (FP)
         Predicted Negative           False Negatives (FN)         True Negatives (TN)
 
@@ -22,17 +22,35 @@
 
     b. Precision = TP / TP + FP 
 
-    c. Recall (sensitivity) = TP/ TP + FN 
+    c. Specificity = TN/ FP + TN (Version of Precision which focused on Negatives - Quality of Negative Predictions)
 
-    d. F1 Score = 2 * (Precision * Recall)/ Precision + Recall
+    d. Recall (sensitivity) = TP/ TP + FN 
+
+    e. F1 Score = 2 * (Precision * Recall)/ Precision + Recall
 
 4. Intuition of above metrics:
     a. Accuracy: 
         1. Accuracy is the proportion of total predictions that the model got correct
         2. Accuracy can be misleading if the data is imbalanced
-    b. Precision
-        1. Precision is a metric used to evaluate the quality of ONLY positive predictions made by a classification model
+
+    b. Precision: Quality of Positive Predictions
+        1. Metric used to evaluate the quality of ONLY positive predictions made by a classification model (Out of all Positives predicted, how many are true Positives)
         2. High precision: Very few false positives
         3. High precision is important when: False positives are costly
-    c. Recall
+
+    c. Recall: Prediction Accuracy of Actual Positives
         1. Out of all actual positives, how many did the model correctly identify?
+        2. It measures the model's ability to find all the relevant cases in a dataset
+        3. You care about recall when missing positive cases is very costly, such as: Medical diagnosis (missing a cancer case)
+
+    d. Precision Vs Recall:
+        1. Precision: Are positive predictions correct Vs Recall: Did the model find all actual positives
+        2. Risk is low - Precision: Too many false alarms (FP) Vs Recall: Missed important cases (FN)
+        3. If both are high - Precision: No false alarms, if predicted as true, is usually right Vs Recall: Captured maximum positives
+
+    e. F1 Score: Harmonic mean of Precision and Recall - single no that balances both
+        1. F1 Score is your go-to when classes are imbalanced and both types of errors matter
+        2. It gives a balanced view of model performance in one clean number
+        3. However, F1 score hides whether Precision or Recall is weak
+
+

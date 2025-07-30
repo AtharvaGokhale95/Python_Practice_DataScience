@@ -6,9 +6,11 @@
         "Inplace",
         "nonsorted",
         "occurence",
+        "overfitting",
         "sabbutsad",
         "sadbutsad",
         "shrinked",
-        "strs"
+        "strs",
+        "underfitting"
     ]
 }
