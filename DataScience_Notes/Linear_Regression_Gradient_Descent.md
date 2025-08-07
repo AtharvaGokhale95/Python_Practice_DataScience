@@ -9,3 +9,7 @@ Intuition of Linear Regression model h(x) and Loss function J(θ): ![alt text](I
     5. Formulae for Gradient Descent J(θ): ![alt text](Images/image-3.png)
     6. Once we reach the local minima, the values of θ0 and θ1 are finalized and then the hypothesis function is used to prediction of unlabelled continuous values (y)
 
+
+Mathematics behind Linear Regression: ![alt text](Images/image-4.png) - The Input is stored in I/P matrix such that multiplication of I/P Matrix and Parameter Matrix will yield a O/P vector
+
+
