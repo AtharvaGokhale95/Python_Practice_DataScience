@@ -29,4 +29,4 @@ class Solution:
 s = Solution()
 print(s.sqrt_builtin(25))
 print(s.sqrt_heron(25))
-print(s.sqrt_binary(25))
+print(s.sqrt_binary(8))

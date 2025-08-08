@@ -20,7 +20,8 @@ class Solution:
         for idx in range(width-1, -1, -1):  # Range starts from last char: width-1, Go up to -1th char means it will stop at 0th char, step = -1: Reverse direction 
             total = carry                                   # After every iteration we will be updating the total with carry to recursively update the total below
             total = total + int(a[idx]) + int(b[idx])       # Here, if we have 1 + 1, it will return 2. But to have binary addition, we have foll logic
-            result = str(total % 2) + result                # Handle: 1 + 1 = carry = 1 and result = 0 
+            result = str(total % 2) + result                # Here we update the result string with adding the new digit in every iteration             
+            # Handle: 1 + 1 = carry = 1 and result = 0 
             carry = total // 2                              # This produces: 1 + 1 = 2//2 = 1, 1 + 1 + 1 = 3//2 = 1                          
         if carry:
             result = '1' + result
