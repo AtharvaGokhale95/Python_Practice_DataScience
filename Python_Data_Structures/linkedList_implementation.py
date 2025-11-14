@@ -1,7 +1,4 @@
-
-
-# Properties/ Parameters: data, next - These properties are passed as parameters to the __init__ function as the value is not fixed, 
-# and you want the user of the class to decide the initial value
+# Properties/Parameters: data, next - These properties are passed as parameters to init function as the value is not fixed, and user decides the value while creating the obj of this class
 
 # Methods: __init__()
 class Node:
@@ -10,11 +7,11 @@ class Node:
         self.data = data    # When I refer data as self.data it helps create a attribute "data" for a any "Node" object - Parameter is used to initialize the attribute
         self.next = next
 
-    # Property/ parameter: head - The value is not passed as parameters to the __init__ function as the value is fixed, and the user does not decide the initial value 
+    # Property/ parameter: head - The value is not passed as parameters to the init function as the value is fixed, and the user does not decide the initial value 
     # If I would have passed head as a parameter, when a instance of class LinkedList is created, we need to pass the value for head 
 
-# Methods: __init__, insert_at_beginning, 
-class LinkedList:
+# Methods: __init__, insert_at_beginning, insert_at_end
+class LinkedList:   # A LL only have 1 property/ attribute: head
     
     def __init__(self, head = None):
         self.head = head        # We don't always use a parameter to initialize the attribute
@@ -37,15 +34,60 @@ class LinkedList:
         # So we are updating the value of the parameter of class Node
         self.head = new_node 
         
+        
+    def insert_at_end(self, data):
+        # If the LL is empty -> Even this method will partly act as it is inserting the node at the beginning and thus self.head = new_node
+        # However, as we want this node to be the last one, next = None 
+        if self.head is None:
+            self.head = Node(data, None)    # This can also be done as: new_node = Node(data, None) -> self.head = new_node
+            return
+        
+        # If the LL is not empty -> We have iterate over the entire LL and reach at the current last node
+        itr = self.head         # So now itr is a Node obj pointing to the head of the LL
+        while itr.next:         # Until itr.next != None
+            itr = itr.next      # Until itr.next have some value we will be iterating as we want to reach to the current last node in the LL
+            # Once the itr.next = None, we will exist the while loop
+        # Now we are the current last node, thus we want to point this current last node to the new_node we want to insert at the end
+        itr.next = Node(data, None)
+        
+    def insert_at (self, idx, data):
+        if idx < 0:
+            print("Invalid Index")
+        
+        if idx == 0:
+            self.insert_at_beginning(data)
+        
+        # As we inserting the node in between the LL: head is not required to be updated -> We only need to insert it at the right location and update the "next" attribute
+        count = 0       # Track the current node idx while traversing the list
+        itr = self.head
+        while itr:      # Until itr != None 
+            if count == idx - 1:
+                # At this location: itr is pointing to the node after which we want to insert the new_node
+                # itr.next -> The node which be the next node after the new_node. Thus, Node(data, itr.next)
+                # Insert the new node here:
+                new_node = Node(data, itr.next)
+                itr.next = new_node         # itr is currently pointing at the earlier node. Thus, itr.next = new_node links the earlier node to the new_node
+            itr = itr.next
+            count += 1
+        print("The index is greater than the size of the LL")       # If the provided idx is bigger than the size of LL, then we print this
+                
+            
+        
+    # Using this function, we will create a entire new LL using the list of values in data_list
+    # def insert_values(self, data_list):
+        
+        
     def print(self):
         # If the LL is empty
         if self.head is None:
             print("The LL is empty")
             return
         
-        # If the LL is not empty
+        # If the LL is not empty, self.head is pointing to a "Node" object (first node in LL). 
+        # Thus, self.head is the "Node" object itself and any Node obj have data and next attributes
+        # When we do: itr = self.head: This statement copies the same reference to itr (Now is also a Node obj) and also have data and next attributes
         itr = self.head 
-        while itr:
+        while itr:          # Iterating until itr != None
             print(itr.data, end = "->")
             itr = itr.next
         print(None)
@@ -57,18 +99,9 @@ my_list = LinkedList()
 
 # Add new nodes at the beginning
 my_list.insert_at_beginning(2)
-my_list.insert_at_beginning(3)
-my_list.insert_at_beginning(4)
+my_list.insert_at_end(4)
+
 
 # Print the list
 my_list.print()
 
-
-
-
-
-
-
-
-
-# The Linked List itself will be an object of LinkedList class
