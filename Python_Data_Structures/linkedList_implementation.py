@@ -74,9 +74,34 @@ class LinkedList:   # A LL only have 1 property/ attribute: head
             
         
     # Using this function, we will create a entire new LL using the list of values in data_list
-    # def insert_values(self, data_list):
+    def insert_values(self, data_list):
+        self.head = None        # Initialized it as a empty LL
+        for value in data_list:
+            self.insert_at_end(value)       # We use insert_at_end method to insert each value after the other
+            
+    
+    def remove_at(self, idx):
+        # If the index is out of range of the Linked List
+        if idx < 0 or idx >= self.get_length():     # Eg: length = 6: if idx >= 6 then raise exception, if idx = 5 then it is a valid idx
+            print("Invalid index")
         
+        # If we want to remove the first node in the linked list
+        if idx == 0:
+            self.head = self.head.next          # Here the self.head is a obj of class Node: self.head = new_node (logic while inserting a new node)
+            return 
         
+        # If we want to remove the node at a particular idx
+        count = 0
+        itr = self.head
+        while itr:
+            if count == idx - 1:
+                # We are at the node prior to the node which we want to remove
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+            count += 1
+            
+            
     def print(self):
         # If the LL is empty
         if self.head is None:
@@ -91,17 +116,38 @@ class LinkedList:   # A LL only have 1 property/ attribute: head
             print(itr.data, end = "->")
             itr = itr.next
         print(None)
+        
+    def get_length(self):
+        count = 0
+        itr = self.head
+        while itr:
+            count += 1
+            itr = itr.next
+        return count
 
             
         
 # Create a LL:
 my_list = LinkedList()
+new_list = LinkedList()
 
 # Add new nodes at the beginning
 my_list.insert_at_beginning(2)
 my_list.insert_at_end(4)
+my_list.insert_at_end(16)
+my_list.insert_at(2, 9)
+new_list.insert_values([1,2,4,9,16,25])
 
 
 # Print the list
+my_list.print()
+new_list.print()
+
+# Print the length of LL:
+print(new_list.get_length())
+
+# Remove a node at a index:
+my_list.print()
+my_list.remove_at(2)
 my_list.print()
 
