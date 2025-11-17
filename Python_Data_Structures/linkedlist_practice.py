@@ -118,6 +118,25 @@ class LinkedList:
                 itr.next = itr.next.next
                 return
             itr = itr.next
+            
+    def remove_head(self):
+        self.head = self.head.next
+        
+    def remove_tail(self):
+        itr = self.head
+        while itr.next.next:
+            itr = itr.next
+        itr.next = None
+        
+    def search(self, data):
+        count = 0
+        itr = self.head
+        while itr:
+            if itr.data == data:
+                return count
+            itr = itr.next
+            count += 1
+                
 
 if __name__ == '__main__':
     my_list = LinkedList()
@@ -129,6 +148,9 @@ if __name__ == '__main__':
     my_list.insert_after_value(25, 36)
     # my_list.remove_at(2)
     # my_list.remove_by_value(49)
+    # my_list.remove_head()
+    # my_list.remove_tail()
+    print("Index:", my_list.search(36))
     my_list.print()
     print(my_list.get_length())
     
