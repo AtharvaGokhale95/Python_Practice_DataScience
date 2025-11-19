@@ -63,7 +63,7 @@ class LinkedList:   # A LL only have 1 property/ attribute: head
         while itr:      # Until itr != None 
             if count == idx - 1:
                 # At this location: itr is pointing to the node after which we want to insert the new_node
-                # itr.next -> The node which be the next node after the new_node. Thus, Node(data, itr.next)
+                # itr.next -> The node which will be the node after the new_node. Thus, Node(data, itr.next)
                 # Insert the new node here:
                 new_node = Node(data, itr.next)
                 itr.next = new_node         # itr is currently pointing at the earlier node. Thus, itr.next = new_node links the earlier node to the new_node

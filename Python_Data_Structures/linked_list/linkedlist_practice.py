@@ -11,8 +11,7 @@
 # 10. print
 # 11. get_length
 # 12. search (T/F, return idx)
-# 13. reverse_inplace
-# 14. is_palindrome
+
 
 
 class Node:
