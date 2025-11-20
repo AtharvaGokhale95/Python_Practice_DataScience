@@ -1,6 +1,6 @@
 # Hashtable implementation in Python is called Dictionaries
 # key -> hash function -> int (idx of the allocated memory in RAM)
-# value of that key is stores in the array a that particular index
+# value of that key is stored in the array at that particular index: index = hash(key) % table_size
 
 # Hash Function: sum(ASCII) + Mode 
 
@@ -26,6 +26,7 @@ class HashTable:
         h = self.get_hash(key)
         self.arr[h] = value
         
+    # Link for python standard operators: https://docs.python.org/3/library/operator.html
     
     def get(self, key):             # You can look-up in the dict only using a key
         h = self.get_hash(key)
@@ -35,6 +36,10 @@ class HashTable:
     def __getitem__(self, key):     # python operator instead of get method
         h = self.get_hash(key)
         return self.arr[h]
+    
+    def __delitem__(self, key):
+        h = self.get_hash(key)
+        self.arr[h] = None          # Setting the value at idx "h" to None -> deleting the value from arr
         
 if __name__ == "__main__":
     dict = HashTable()              # Each obj of class HashTable will have MAX and arr attributes
@@ -44,6 +49,7 @@ if __name__ == "__main__":
     dict.add('march 15', 139)
     dict['march 18'] = 140
     dict['march 21'] = 144
+    del dict['march 12']
     # print("The array looks like:",dict.arr)
     print("The value on March 12 is:",dict.get('march 12'))
     print("The value on March 18 is:", dict['march 18'])
