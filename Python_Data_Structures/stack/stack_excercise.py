@@ -48,7 +48,7 @@ class Stack:
 # 5. Now, stack = ['[']
 # 6. char = ']' -> closing bracket -> This needs to match with the first char in the stack to maintain the balance -> If it matches then pop it out
 
-def is_match(key, val):
+def is_match(closing_bracket, opening_bracket):
     # Here we keep the closing bracket as the key and opening bracket as the value
     # This is because, in the is_balanced logic, if we get a opening bracket we push it in the stack, 
     # But if we get a closing bracket, we use that char as the key and pass it to the is_match function to find its value and then determine the match
@@ -57,18 +57,20 @@ def is_match(key, val):
         ')' : '(',
         ']' : '['
     }
-    return match_dict[key] == val           # Returns a boolean value: True/ False if the condition is satisfied
+    return match_dict[closing_bracket] == opening_bracket           # Returns a boolean value: True/ False if the condition is satisfied
 
 # print(is_match('{', '}'))                 # This returns True
 
 def is_balanced(string):                    # returns a boolean value: True/ False
     stack  = Stack()                        # Created an obj of class Stack
+    opening = set("{([]")
+    closing = set('})]')
     for char in string:
-        if char == '{' or char == '(' or char == '[':       # If it is a opening parenthesis then push that char in the stack
+        if char in opening:       # If it is a opening parenthesis then push that char in the stack
             stack.push(char)
-        if char == '}' or char == ')' or char == ']':       # If the the char is a closing parenthesis, 
+        if char in closing:       # If the the char is a closing parenthesis, we pass it to is_match function to check for its val
             if stack.size() == 0:
-                return False                # There is a closing bracket without any corresponding opening bracket remaining in the stack -> Not balanced
+                return False                        # There is a closing bracket without any corresponding opening bracket remaining in the stack -> Not balanced
             if not is_match(char, stack.pop()):     # If is_match is True then we just pop the matching opening bracket and we move the the next char
                 # However, even if one pair is not matching we can directly return False
                 return False
