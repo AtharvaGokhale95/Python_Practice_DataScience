@@ -63,7 +63,7 @@ def is_match(closing_bracket, opening_bracket):
 
 def is_balanced(string):                    # returns a boolean value: True/ False
     stack  = Stack()                        # Created an obj of class Stack
-    opening = set("{([]")
+    opening = set("{([")
     closing = set('})]')
     for char in string:
         if char in opening:       # If it is a opening parenthesis then push that char in the stack
